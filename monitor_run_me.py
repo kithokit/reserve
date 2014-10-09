@@ -33,4 +33,4 @@ print 'iPhone 6/6 Plus Store Monitoring \n'
 
 while True:
   os.system('python storecheck.py')
-  time.sleep(30)
+  time.sleep(3)

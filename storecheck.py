@@ -29,8 +29,8 @@ import os
 import time
 
 #change this to alter the monitoring stores.
-pref_stores = ['R118', 'R410', 'R270', 'R255','R092']
-	
+pref_stores = ['R485', 'R409', 'R428', 'R255','R092']
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -38,54 +38,54 @@ class bcolors:
     WARNING = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
-    
+
 def decode(k):
 
-	if(k=="MG4J2B/A"):
+	if(k=="MG4J2ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Silver - 128GB"
-	elif(k=="MGAJ2B/A"):
+	elif(k=="MGAJ2ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Silver - 64GB"
-	elif(k=="MGA82B/A"):
+	elif(k=="MGA82ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Silver - 16GB"
 
-	elif(k=="MGAC2B/A"):
+	elif(k=="MGAC2ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Grey - 128GB"
-	elif(k=="MGAH2B/A"):
+	elif(k=="MGAH2ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Grey - 64GB"
 
-	elif(k=="MGAF2B/A"):
+	elif(k=="MGAF2ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Gold - 128GB"
-	elif(k=="MGAK2B/A"):
+	elif(k=="MGAK2ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Gold - 64GB"
-	elif(k=="MGAA2B/A"):
+	elif(k=="MGAA2ZP/A"):
 		return bcolors.FAIL + "Apple iPhone 6 Plus Gold - 16GB"
 
-	elif(k=="MG4H2B/A"):
-		return bcolors.FAIL + "MG4H2B/A"
+	elif(k=="MG4H2ZP/A"):
+		return bcolors.FAIL + "MG4H2P/A"
 
-	elif(k=="MG4J2B/A"):
+	elif(k=="MG4J2ZP/A"):
 		return bcolors.WARNING + "Apple iPhone 6 Gold - 64GB"
-	elif(k=="MG492B/A"):
+	elif(k=="MG492ZP/A"):
 		return bcolors.WARNING + "Apple iPhone 6 Gold - 16GB"
-	elif(k=="MG4E2B/A"):
-		return bcolors.WARNING + "Apple iPhone 6 Gold - 128GB"
-	elif(k=="MG4F2B/A"):
+	#elif(k=="MG4E2ZP/A"):
+	#	return bcolors.WARNING + "Apple iPhone 6 Gold - 128GB"
+	elif(k=="MG4F2ZP/A"):
 		return bcolors.WARNING + "Apple iPhone 6 Grey - 64GB"
-	elif(k=="MG472B/A"):
+	elif(k=="MG472ZP/A"):
 		return bcolors.WARNING + "Apple iPhone 6 Grey - 16GB"
-	elif(k=="MG4A2B/A"):
-		return bcolors.WARNING + "Apple iPhone 6 Grey - 128GB"
-	elif(k=="MG4C2B/A"):
-		return bcolors.WARNING + "Apple iPhone 6 Silver - 128GB"
-	elif(k=="MG482B/A"):
+	#elif(k=="MG4A2ZP/A"):
+	#	return bcolors.WARNING + "Apple iPhone 6 Grey - 128GB"
+	#elif(k=="MG4C2ZP/A"):
+	#	return bcolors.WARNING + "Apple iPhone 6 Silver - 128GB"
+	elif(k=="MG482ZP/A"):
 		return bcolors.WARNING + "Apple iPhone 6 Silver - 16GB"
 
 	else:
 		return bcolors.FAIL + k;
 
-    
-storeurl = "https://reserve.cdn-apple.com/GB/en_GB/reserve/iPhone/stores.json"
-availurl = "https://reserve.cdn-apple.com/GB/en_GB/reserve/iPhone/availability.json"
+
+storeurl = "https://reserve.cdn-apple.com/HK/en_HK/reserve/iPhone/stores.json"
+availurl = "https://reserve.cdn-apple.com/HK/en_HK/reserve/iPhone/availability.json"
 
 
 try:
@@ -107,7 +107,7 @@ try:
 						avail_in_required = True;
 		print bcolors.OKBLUE + "Updated: "+ time.strftime('%d, %b %Y %H:%M:%S')  + "\n"
 		if avail_in_required == True:
-			os.system('say -v "Kate" "iPhone\ is Available in the required store!!."')
+			os.system('say -v "Victoria" "iPhone\ is Available in the required store!!."')
 
 	else:
 		print bcolors.FAIL + time.strftime('%d, %b %Y %H:%M:%S') + " - Data Unavailable."
